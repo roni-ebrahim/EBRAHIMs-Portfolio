@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Projects & Case Studies — Ebrahim Hossain</title>
+  <meta name="description" content="Explore selected design works, digital products, eVTOL interfaces, industrial hardware, and high-conversion brand architectures by Ebrahim Hossain.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:ital,wght@1,800;1,900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Playfair+Display:ital@1&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/ethnocentric" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #0c0e17;
+      --bg-surface: rgba(19, 22, 34, 0.72);
+      --bg-surface-hover: rgba(26, 31, 48, 0.85);
+      --fg: #ffffff;
+      --fg-muted: #9ca3af;
+      --fg-subtle: #6b7280;
+      --accent: #ff5722;
+      --accent-hover: #f4511e;
+      --blue-accent: #3b82f6;
+      --blue-glow: rgba(59, 130, 246, 0.25);
+      --teal-accent: #14b8a6;
+      --purple-accent: #8b5cf6;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-highlight: rgba(255, 255, 255, 0.16);
+      --border-glow: rgba(99, 102, 241, 0.4);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-pill: 9999px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      background-image: 
+        /* Strategic orange-red ambient radial gradients (low opacity) */
+        radial-gradient(circle at 88% 12%, rgba(255, 77, 0, 0.18) 0%, rgba(239, 68, 68, 0.08) 35%, transparent 58%),
+        radial-gradient(circle at 8% 42%, rgba(255, 87, 34, 0.15) 0%, rgba(220, 38, 38, 0.07) 32%, transparent 55%),
+        radial-gradient(circle at 92% 68%, rgba(255, 69, 0, 0.14) 0%, rgba(239, 68, 68, 0.06) 38%, transparent 55%),
+        radial-gradient(circle at 25% 92%, rgba(255, 87, 34, 0.13) 0%, rgba(225, 29, 72, 0.06) 35%, transparent 52%),
+        /* Supporting cool ambient tones for balance */
+        radial-gradient(circle at 18% 15%, rgba(59, 130, 246, 0.10) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.06) 0%, transparent 55%),
+        radial-gradient(circle at 80% 88%, rgba(20, 184, 166, 0.06) 0%, transparent 42%);
+      background-attachment: fixed;
+      color: var(--fg);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* Ambient soft glow orbs */
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(110px);
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.65;
+    }
+
+    .glow-orb-orange-red {
+      background: radial-gradient(circle, rgba(255, 87, 34, 0.22) 0%, rgba(239, 68, 68, 0.12) 45%, transparent 75%);
+    }
+
+    /* Ambient noise & grid subtle overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 72px 72px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Typography Utilities */
+    .serif-italic {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 16px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 24px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue-accent);
+      box-shadow: 0 0 10px var(--blue-accent);
+    }
+
+    .badge-dot.orange {
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .badge-dot.teal {
+      background: var(--teal-accent);
+      box-shadow: 0 0 10px var(--teal-accent);
+    }
+
+    /* ========================================================
+       Navigation Bar
+       ======================================================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 22px 0;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(12, 14, 23, 0.75);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Ethnocentric Rg', 'Ethnocentric', 'Orbitron', -apple-system, sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+      transition: all 0.25s ease;
+    }
+
+    .logo:hover {
+      text-shadow: 0 0 24px rgba(255, 87, 34, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .logo-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.72);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #fff;
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #ffffff;
+      color: #09090b;
+      padding: 6px 8px 6px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(255, 87, 34, 0.25);
+    }
+
+    .btn-arrow-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff7043, #f4511e);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: transform 0.25s ease;
+    }
+
+    .btn-pill:hover .btn-arrow-icon {
+      transform: translateX(2px);
+    }
+
+    /* ========================================================
+       SECTION 1: HERO / TOP HEADER WITH TITLE & SUBTEXT
+       ======================================================== */
+    .projects-hero-section {
+      padding: 80px 0 60px;
+      position: relative;
+    }
+
+    .hero-header-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 900px;
+    }
+
+    .page-title {
+      font-size: clamp(3rem, 6.5vw, 5.2rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+      color: #ffffff;
+      text-transform: none;
+    }
+
+    .page-subtext {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.6;
+      max-width: 760px;
+    }
+
+    /* Hero Quick Highlights Row */
+    .hero-stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+      padding: 24px 32px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+    }
+
+    .strip-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .strip-number {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .strip-number span {
+      font-size: 20px;
+      color: var(--accent);
+    }
+
+    .strip-label {
+      font-size: 13px;
+      color: var(--fg-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Filter Controls Bar */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 48px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .filter-pills {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+
+    .filter-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-btn.active {
+      background: #ffffff;
+      color: #0c0e17;
+      border-color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+    }
+
+    .results-count {
+      font-size: 13px;
+      color: var(--fg-muted);
+      font-weight: 500;
+    }
+
+    /* ========================================================
+       SECTION 2: FEATURED CASE STUDIES (DEEP DIVE GRID)
+       ======================================================== */
+    .featured-projects-section {
+      padding: 50px 0 90px;
+      position: relative;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
+    }
+
+    .project-card-full {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      position: relative;
+    }
+
+    .project-card-full::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 87, 34, 0.45), rgba(239, 68, 68, 0.35), transparent);
+      z-index: 5;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card-full:hover::before {
+      opacity: 1;
+    }
+
+    .project-card-full:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 87, 34, 0.3);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 36px rgba(255, 87, 34, 0.14);
+    }
+
+    .project-card-full.span-two {
+      grid-column: span 2;
+    }
+
+    .card-media-wrap {
+      width: 100%;
+      height: 380px;
+      position: relative;
+      overflow: hidden;
+      background: #090a10;
+    }
+
+    .project-card-full.span-two .card-media-wrap {
+      height: 480px;
+    }
+
+    .card-media-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      display: block;
+    }
+
+    .project-card-full:hover .card-media-wrap img {
+      transform: scale(1.04);
+    }
+
+    .card-badge-floating {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(12, 14, 23, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-year-tag {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .card-content {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .card-info-top {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag-pill {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .project-heading {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.25;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .project-card-full.span-two .project-heading {
+      font-size: 32px;
+    }
+
+    .project-summary {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.6;
+    }
+
+    .card-metrics-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .metric-cell {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metric-val {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .metric-lbl {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--fg-muted);
+    }
+
+    .card-action-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+    }
+
+    .view-case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .view-case-link:hover {
+      color: var(--accent);
+    }
+
+    .case-arrow-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 14px;
+      transition: all 0.25s ease;
+    }
+
+    .project-card-full:hover .case-arrow-btn {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    /* ========================================================
+       SECTION 3: SELECTED ARCHIVES / CLIENT MATRIX TABLE
+       ======================================================== */
+    .archive-section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .section-header-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .section-title-large {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: #fff;
+    }
+
+    .section-sub-desc {
+      font-size: 15px;
+      color: var(--fg-muted);
+      max-width: 440px;
+      line-height: 1.6;
+    }
+
+    .archive-table-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .archive-table-header {
+      display: grid;
+      grid-template-columns: 2.2fr 2fr 1.6fr 1fr 1fr;
+      padding: 18px 32px;
+      background: rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+    }
+
+    .archive-row {
+      display: grid;
+      grid-template-columns: 2.2fr 2fr 1.6fr 1fr 1fr;
+      padding: 22px 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      align-items: center;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .archive-row:last-child {
+      border-bottom: none;
+    }
+
+    .archive-row:hover {
+      background: rgba(255, 255, 255, 0.04);
+      padding-left: 36px;
+    }
+
+    .col-title {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .archive-project-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
+    .archive-client {
+      font-size: 13px;
+      color: var(--fg-muted);
+    }
+
+    .col-discipline {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .col-category-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue-accent);
+    }
+
+    .col-impact {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal-accent);
+    }
+
+    .col-year {
+      font-size: 14px;
+      color: var(--fg-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .col-action {
+      text-align: right;
+    }
+
+    .archive-view-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    .archive-row:hover .archive-view-pill {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* ========================================================
+       SECTION 4: DESIGN PHILOSOPHY & PROJECT IMPACT
+       ======================================================== */
+    .philosophy-section {
+      padding: 80px 0 100px;
+      position: relative;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .pillar-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .pillar-card:hover {
+      border-color: var(--border-highlight);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .pillar-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .pillar-card:nth-child(1) .pillar-icon-box {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.35);
+      color: #60a5fa;
+    }
+
+    .pillar-card:nth-child(2) .pillar-icon-box {
+      background: rgba(255, 87, 34, 0.15);
+      border-color: rgba(255, 87, 34, 0.35);
+      color: #ff7043;
+    }
+
+    .pillar-card:nth-child(3) .pillar-icon-box {
+      background: rgba(20, 184, 166, 0.15);
+      border-color: rgba(20, 184, 166, 0.35);
+      color: #2dd4bf;
+    }
+
+    .pillar-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
+    .pillar-text {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* Client Endorsement Banner */
+    .endorsement-card {
+      margin-top: 48px;
+      background: linear-gradient(135deg, rgba(26, 31, 48, 0.8) 0%, rgba(18, 20, 31, 0.9) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 48px 56px;
+      backdrop-filter: blur(20px);
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .quote-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .quote-mark {
+      font-size: 40px;
+      line-height: 1;
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .quote-text {
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      font-weight: 500;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.92);
+      letter-spacing: -0.01em;
+    }
+
+    .quote-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      color: #fff;
+    }
+
+    .author-meta h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .author-meta p {
+      font-size: 12px;
+      color: var(--fg-muted);
+    }
+
+    .endorsement-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-left: 36px;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .metric-badge-box {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .badge-icon-circ {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .badge-details h5 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .badge-details p {
+      font-size: 12px;
+      color: var(--fg-muted);
+    }
+
+    /* ========================================================
+       FOOTER
+       ======================================================== */
+    footer {
+      background: rgba(10, 12, 19, 0.85);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 70px 0 40px;
+      margin-top: 60px;
+      position: relative;
+      z-index: 20;
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .footer-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--fg-muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    .footer-cta-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-cta-card h5 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .footer-cta-card p {
+      font-size: 13px;
+      color: var(--fg-muted);
+      line-height: 1.5;
+    }
+
+    .footer-bottom-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 13px;
+      color: var(--fg-subtle);
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal-links a {
+      color: var(--fg-subtle);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-legal-links a:hover {
+      color: #fff;
+    }
+
+    /* Modal / Details Popup preview */
+    .project-dialog {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-xl);
+      background: #0e111d;
+      color: #fff;
+      padding: 36px;
+      max-width: 680px;
+      margin: auto;
+      backdrop-filter: blur(24px);
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+    }
+
+    .project-dialog::backdrop {
+      background: rgba(5, 7, 12, 0.75);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-stats-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .archive-table-header,
+      .archive-row {
+        grid-template-columns: 2fr 1.5fr 1fr 1fr;
+      }
+
+      .col-year {
+        display: none;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .endorsement-card {
+        grid-template-columns: 1fr;
+      }
+
+      .endorsement-metrics {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 24px;
+      }
+
+      .footer-top-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card-full.span-two {
+        grid-column: span 1;
+      }
+
+      .card-media-wrap {
+        height: 280px;
+      }
+
+      .project-card-full.span-two .card-media-wrap {
+        height: 280px;
+      }
+
+      .archive-table-header {
+        display: none;
+      }
+
+      .archive-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 20px 24px;
+      }
+
+      .col-action {
+        text-align: left;
+      }
+
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom-line {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="content-wrapper">
+      <nav class="nav-bar">
+        <a href="index.html" class="logo">
+          Ebrahim
+          <span class="logo-dot"></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="index.html#workflow">Workflow</a></li>
+          <li><a href="index.html#palette">Tech Stack</a></li>
+          <li><a href="index.html#stats">Stats</a></li>
+          <li><a href="index.html#profile">Contact</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn-pill">
+          Let's Talk
+          <span class="btn-arrow-icon">→</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="position: relative; overflow: hidden;">
+    <!-- Strategic Low-Opacity Orange-Red Ambient Glow Points -->
+    <div class="glow-orb glow-orb-orange-red" style="width: 620px; height: 620px; top: -120px; right: -100px; opacity: 0.55;"></div>
+    <div class="glow-orb glow-orb-orange-red" style="width: 700px; height: 700px; top: 36%; left: -160px; opacity: 0.42;"></div>
+    <div class="glow-orb glow-orb-orange-red" style="width: 580px; height: 580px; top: 70%; right: -120px; opacity: 0.40;"></div>
+    <div class="glow-orb glow-orb-orange-red" style="width: 480px; height: 480px; bottom: 50px; left: 15%; opacity: 0.35;"></div>
+
+    <!-- ========================================================
+         SECTION 1: HERO / TOP HEADER (TITLE & SUBTEXT + FILTERS)
+         ======================================================== -->
+    <section class="projects-hero-section">
+      <div class="content-wrapper">
+        <div class="hero-header-box">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            Curated Index 2024 — 2026
+          </div>
+          <h1 class="page-title">
+            Crafting Digital Products & <span class="serif-italic">Impactful</span> Brand Experiences
+          </h1>
+          <p class="page-subtext">
+            A comprehensive portfolio of cross-disciplinary works spanning aerospace telemetry interfaces, high-liquidity fintech systems, ergonomic physical hardware, and complete brand architectures designed to lead industries.
+          </p>
+        </div>
+
+        <!-- Metric highlights strip -->
+        <div class="hero-stats-strip">
+          <div class="strip-item">
+            <div class="strip-number">28<span>+</span></div>
+            <div class="strip-label">Shipped Products</div>
+          </div>
+          <div class="strip-item">
+            <div class="strip-number">98<span>%</span></div>
+            <div class="strip-label">Client Retention</div>
+          </div>
+          <div class="strip-item">
+            <div class="strip-number">6<span>x</span></div>
+            <div class="strip-label">Average ROI Multiplier</div>
+          </div>
+          <div class="strip-item">
+            <div class="strip-number">3<span>★</span></div>
+            <div class="strip-label">Global Design Awards</div>
+          </div>
+        </div>
+
+        <!-- Filter bar -->
+        <div class="filter-bar">
+          <div class="filter-pills" id="filterPills">
+            <button class="filter-btn active" data-filter="all">All Projects (06)</button>
+            <button class="filter-btn" data-filter="product">Digital UI & Fintech</button>
+            <button class="filter-btn" data-filter="aerospace">Aviation & eVTOL</button>
+            <button class="filter-btn" data-filter="hardware">Hardware & Industrial</button>
+            <button class="filter-btn" data-filter="brand">Brand Architecture</button>
+          </div>
+          <div class="results-count" id="resultsCount">Showing 6 curated case studies</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 2: FEATURED CASE STUDIES (DEEP DIVE GRID)
+         ======================================================== -->
+    <section class="featured-projects-section" id="case-studies">
+      <div class="content-wrapper">
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- Project 1: Large Span - Aether Fintech -->
+          <article class="project-card-full span-two" data-category="product">
+            <div class="card-media-wrap">
+              <img src="project_fintech.jpg" alt="Aether Spatial Wealth Fintech Interface" loading="lazy">
+              <div class="card-badge-floating">
+                <span class="badge-dot orange"></span>
+                Flagship Case Study
+              </div>
+              <div class="card-year-tag">2025 • Mobile & Web</div>
+            </div>
+            <div class="card-content">
+              <div class="card-info-top">
+                <div class="card-tags">
+                  <span class="tag-pill">Fintech</span>
+                  <span class="tag-pill">Spatial UI</span>
+                  <span class="tag-pill">Mobile iOS</span>
+                  <span class="tag-pill">Design System</span>
+                </div>
+                <div class="project-heading">
+                  Aether — Autonomous Wealth & Real-Time Portfolio Intelligence
+                </div>
+                <p class="project-summary">
+                  Designed a multi-asset institutional investment interface bringing real-time algorithmic telemetry, liquidity heatmaps, and spatial multi-tiered portfolios into an intuitive glassmorphic mobile experience. Reduced transaction friction by 64% and drove $240M+ in managed transaction volume within 90 days.
+                </p>
+              </div>
+
+              <div class="card-metrics-row">
+                <div class="metric-cell">
+                  <div class="metric-val">+340%</div>
+                  <div class="metric-lbl">Active Engagement</div>
+                </div>
+                <div class="metric-cell">
+                  <div class="metric-val">0.18s</div>
+                  <div class="metric-lbl">Execution Latency</div>
+                </div>
+                <div class="metric-cell">
+                  <div class="metric-val">4.9 ★</div>
+                  <div class="metric-lbl">App Store Rating</div>
+                </div>
+              </div>
+
+              <div class="card-action-row">
+                <a href="#scale" class="view-case-link">
+                  Explore full case study breakdown
+                </a>
+                <a href="#scale" class="case-arrow-btn" aria-label="View Aether details">↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Tadveer eVTOL Cockpit Interface -->
+          <article class="project-card-full" data-category="aerospace">
+            <div class="card-media-wrap">
+              <img src="project_evtol.jpg" alt="Tadveer eVTOL Flight Interface" loading="lazy">
+              <div class="card-badge-floating">
+                <span class="badge-dot"></span>
+                Aerospace & HUD
+              </div>
+              <div class="card-year-tag">2025 • Operating System</div>
+            </div>
+            <div class="card-content">
+              <div class="card-info-top">
+                <div class="card-tags">
+                  <span class="tag-pill">eVTOL</span>
+                  <span class="tag-pill">Flight OS</span>
+                  <span class="tag-pill">HUD Telemetry</span>
+                </div>
+                <div class="project-heading">
+                  Tadveer — Urban eVTOL Flight Deck & Pilot HUD
+                </div>
+                <p class="project-summary">
+                  Curated an ultra-high contrast cockpit operating system for next-generation electric urban aircraft. Designed dynamic terrain avoidance maps, battery thermals, and autonomous autopilot modes adhering to FAA Part 23 human factors.
+                </p>
+              </div>
+
+              <div class="card-metrics-row">
+                <div class="metric-cell">
+                  <div class="metric-val">65%</div>
+                  <div class="metric-lbl">Cognitive Load Red.</div>
+                </div>
+                <div class="metric-cell">
+                  <div class="metric-val">FAA</div>
+                  <div class="metric-lbl">Compliance Certified</div>
+                </div>
+              </div>
+
+              <div class="card-action-row">
+                <a href="#scale" class="view-case-link">
+                  View flight cockpit documentation
+                </a>
+                <a href="#scale" class="case-arrow-btn" aria-label="View Tadveer details">↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Sona Pure Acoustic Hardware -->
+          <article class="project-card-full" data-category="hardware">
+            <div class="card-media-wrap">
+              <img src="card_headphones.jpg" alt="Sona Acoustic Spatial Headphones" loading="lazy">
+              <div class="card-badge-floating">
+                <span class="badge-dot teal"></span>
+                Hardware Design
+              </div>
+              <div class="card-year-tag">2024 • Industrial</div>
+            </div>
+            <div class="card-content">
+              <div class="card-info-top">
+                <div class="card-tags">
+                  <span class="tag-pill">Industrial Design</span>
+                  <span class="tag-pill">Acoustics</span>
+                  <span class="tag-pill">Packaging</span>
+                </div>
+                <div class="project-heading">
+                  Sona — Studio Reference Spatial Audio Headphones
+                </div>
+                <p class="project-summary">
+                  Engineered CNC aluminum hinge kinematics, memory-foam acoustic dampening geometry, and companion tactile haptics for precision music producers and spatial audio engineers worldwide.
+                </p>
+              </div>
+
+              <div class="card-metrics-row">
+                <div class="metric-cell">
+                  <div class="metric-val">Red Dot</div>
+                  <div class="metric-lbl">Best of the Best 2024</div>
+                </div>
+                <div class="metric-cell">
+                  <div class="metric-val">42k+</div>
+                  <div class="metric-lbl">Units Shipped</div>
+                </div>
+              </div>
+
+              <div class="card-action-row">
+                <a href="#scale" class="view-case-link">
+                  View industrial prototype renders
+                </a>
+                <a href="#scale" class="case-arrow-btn" aria-label="View Sona details">↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Kinetics Modular Technical Outerwear -->
+          <article class="project-card-full" data-category="hardware">
+            <div class="card-media-wrap">
+              <img src="card_jacket.jpg" alt="Kinetics Technical Outerwear System" loading="lazy">
+              <div class="card-badge-floating">
+                <span class="badge-dot orange"></span>
+                Apparel Architecture
+              </div>
+              <div class="card-year-tag">2024 • Material Lab</div>
+            </div>
+            <div class="card-content">
+              <div class="card-info-top">
+                <div class="card-tags">
+                  <span class="tag-pill">Technical Apparel</span>
+                  <span class="tag-pill">Gore-Tex Pro</span>
+                  <span class="tag-pill">Modular</span>
+                </div>
+                <div class="project-heading">
+                  Kinetics Form 01 — Adaptive Climate Weatherproof Shell
+                </div>
+                <p class="project-summary">
+                  Designed an all-weather technical outerwear garment featuring magnetic pocket articulation, taped seam micro-grids, and zero-waste 3D pattern cutting for high-mobility alpine expeditions.
+                </p>
+              </div>
+
+              <div class="card-metrics-row">
+                <div class="metric-cell">
+                  <div class="metric-val">0g Waste</div>
+                  <div class="metric-lbl">Pattern Geometry</div>
+                </div>
+                <div class="metric-cell">
+                  <div class="metric-val">100%</div>
+                  <div class="metric-lbl">Recycled Polyamide</div>
+                </div>
+              </div>
+
+              <div class="card-action-row">
+                <a href="#scale" class="view-case-link">
+                  Inspect tech pack and lookbook
+                </a>
+                <a href="#scale" class="case-arrow-btn" aria-label="View Kinetics details">↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: L'Aura Cosmetic Formulation -->
+          <article class="project-card-full" data-category="brand">
+            <div class="card-media-wrap">
+              <img src="card_bottle.jpg" alt="L'Aura Botanical Elixir Packaging System" loading="lazy">
+              <div class="card-badge-floating">
+                <span class="badge-dot teal"></span>
+                Packaging & Identity
+              </div>
+              <div class="card-year-tag">2025 • Brand Identity</div>
+            </div>
+            <div class="card-content">
+              <div class="card-info-top">
+                <div class="card-tags">
+                  <span class="tag-pill">Packaging</span>
+                  <span class="tag-pill">Luxury Cosmetics</span>
+                  <span class="tag-pill">Sustainability</span>
+                </div>
+                <div class="project-heading">
+                  L'Aura — Minimalist Botanical Elixir & Sustainable Glass System
+                </div>
+                <p class="project-summary">
+                  Crafted bespoke ultraviolet amber glassware, debossed tactile typography, and fully biodegradable unboxing architecture for a premier clean botanical skin formulation line in Paris.
+                </p>
+              </div>
+
+              <div class="card-metrics-row">
+                <div class="metric-cell">
+                  <div class="metric-val">+210%</div>
+                  <div class="metric-lbl">D2C Shelf Conversion</div>
+                </div>
+                <div class="metric-cell">
+                  <div class="metric-val">D&AD</div>
+                  <div class="metric-lbl">Yellow Pencil Nominee</div>
+                </div>
+              </div>
+
+              <div class="card-action-row">
+                <a href="#scale" class="view-case-link">
+                  View complete packaging system
+                </a>
+                <a href="#scale" class="case-arrow-btn" aria-label="View L'Aura details">↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Omni Design Tokens -->
+          <article class="project-card-full" data-category="product">
+            <div class="card-media-wrap" style="background: linear-gradient(135deg, #101322 0%, #1e1b4b 50%, #0f172a 100%); display:flex; align-items:center; justify-content:center;">
+              <div style="text-align:center; padding: 40px;">
+                <div style="display:inline-flex; gap:16px; margin-bottom: 24px;">
+                  <span style="width:54px; height:54px; border-radius:16px; background:#ff5722; box-shadow:0 8px 24px rgba(255,87,34,0.4); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:22px;">✦</span>
+                  <span style="width:54px; height:54px; border-radius:16px; background:#3b82f6; box-shadow:0 8px 24px rgba(59,130,246,0.4); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:22px;">❖</span>
+                  <span style="width:54px; height:54px; border-radius:16px; background:#14b8a6; box-shadow:0 8px 24px rgba(20,184,166,0.4); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:22px;">☵</span>
+                </div>
+                <h3 style="font-size:28px; font-weight:800; letter-spacing:-0.02em;">OMNI SYSTEM</h3>
+                <p style="font-size:14px; color:rgba(255,255,255,0.6); margin-top:8px;">420+ Design Tokens • React & SwiftUI</p>
+              </div>
+              <div class="card-badge-floating">
+                <span class="badge-dot"></span>
+                Design Engineering
+              </div>
+              <div class="card-year-tag">2024 • Open Ecosystem</div>
+            </div>
+            <div class="card-content">
+              <div class="card-info-top">
+                <div class="card-tags">
+                  <span class="tag-pill">Design System</span>
+                  <span class="tag-pill">Tokens</span>
+                  <span class="tag-pill">React</span>
+                  <span class="tag-pill">SwiftUI</span>
+                </div>
+                <div class="project-heading">
+                  Omni — Multi-Brand Cross-Platform Design Token Infrastructure
+                </div>
+                <p class="project-summary">
+                  Built a universal token compiler linking Figma variables directly to production code across iOS, Android, and Next.js web applications, eliminating developer discrepancy and saving 1,200+ team sprint hours.
+                </p>
+              </div>
+
+              <div class="card-metrics-row">
+                <div class="metric-cell">
+                  <div class="metric-val">100%</div>
+                  <div class="metric-lbl">Figma Token Sync</div>
+                </div>
+                <div class="metric-cell">
+                  <div class="metric-val">-68%</div>
+                  <div class="metric-lbl">Handoff Turnaround</div>
+                </div>
+              </div>
+
+              <div class="card-action-row">
+                <a href="#scale" class="view-case-link">
+                  View open token specification
+                </a>
+                <a href="#scale" class="case-arrow-btn" aria-label="View Omni details">↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 3: ARCHIVE & CLIENT INDEX MATRIX
+         ======================================================== -->
+    <section class="archive-section" id="archive">
+      <div class="content-wrapper">
+        <div class="section-header-row">
+          <div>
+            <div class="section-badge">
+              <span class="badge-dot teal"></span>
+              Comprehensive Archive
+            </div>
+            <h2 class="section-title-large">
+              Selected Client Index & <span class="serif-italic">Deliverables</span>
+            </h2>
+          </div>
+          <p class="section-sub-desc">
+            A chronological catalog of strategic engagements, rapid prototypes, brand identities, and software applications built for venture-backed startups and category leaders.
+          </p>
+        </div>
+
+        <div class="archive-table-card">
+          <div class="archive-table-header">
+            <span>Project & Client</span>
+            <span>Discipline / Domain</span>
+            <span>Measurable Impact</span>
+            <span>Year</span>
+            <span style="text-align: right;">Action</span>
+          </div>
+
+          <div class="archive-row">
+            <div class="col-title">
+              <span class="archive-project-name">Supa Blox Ecosystem</span>
+              <span class="archive-client">Supa Technologies • San Francisco</span>
+            </div>
+            <div class="col-discipline">
+              <span class="col-category-dot"></span>
+              Full Brand & Web Architecture
+            </div>
+            <div class="col-impact">+185% Pipeline</div>
+            <div class="col-year">2025</div>
+            <div class="col-action">
+              <span class="archive-view-pill">Explore ↗</span>
+            </div>
+          </div>
+
+          <div class="archive-row">
+            <div class="col-title">
+              <span class="archive-project-name">Hype Blox Mobile Experience</span>
+              <span class="archive-client">Hype Ventures • London</span>
+            </div>
+            <div class="col-discipline">
+              <span class="col-category-dot" style="background:var(--accent);"></span>
+              Mobile App & Micro-interactions
+            </div>
+            <div class="col-impact">4.8★ App Store</div>
+            <div class="col-year">2024</div>
+            <div class="col-action">
+              <span class="archive-view-pill">Explore ↗</span>
+            </div>
+          </div>
+
+          <div class="archive-row">
+            <div class="col-title">
+              <span class="archive-project-name">Frame Blox Creative Suite</span>
+              <span class="archive-client">Frame Media • Tokyo</span>
+            </div>
+            <div class="col-discipline">
+              <span class="col-category-dot" style="background:var(--teal-accent);"></span>
+              SaaS Interface & Spatial Tools
+            </div>
+            <div class="col-impact">94 NPS Score</div>
+            <div class="col-year">2025</div>
+            <div class="col-action">
+              <span class="archive-view-pill">Explore ↗</span>
+            </div>
+          </div>
+
+          <div class="archive-row">
+            <div class="col-title">
+              <span class="archive-project-name">Ultra Blox Token Framework</span>
+              <span class="archive-client">Ultra Systems • Berlin</span>
+            </div>
+            <div class="col-discipline">
+              <span class="col-category-dot" style="background:var(--purple-accent);"></span>
+              Design Tokens & Documentation
+            </div>
+            <div class="col-impact">30k Weekly Devs</div>
+            <div class="col-year">2024</div>
+            <div class="col-action">
+              <span class="archive-view-pill">Explore ↗</span>
+            </div>
+          </div>
+
+          <div class="archive-row">
+            <div class="col-title">
+              <span class="archive-project-name">Veloce Telemetry Dashboard</span>
+              <span class="archive-client">Veloce Hypercars • Milan</span>
+            </div>
+            <div class="col-discipline">
+              <span class="col-category-dot"></span>
+              In-Vehicle HUD & Canvas Realtime
+            </div>
+            <div class="col-impact">Zero-Lag Render</div>
+            <div class="col-year">2025</div>
+            <div class="col-action">
+              <span class="archive-view-pill">Explore ↗</span>
+            </div>
+          </div>
+
+          <div class="archive-row">
+            <div class="col-title">
+              <span class="archive-project-name">Pulse Biometric Band</span>
+              <span class="archive-client">Pulse Health • Stockholm</span>
+            </div>
+            <div class="col-discipline">
+              <span class="col-category-dot" style="background:var(--teal-accent);"></span>
+              Wearable Hardware & Companion App
+            </div>
+            <div class="col-impact">IF Design Award</div>
+            <div class="col-year">2024</div>
+            <div class="col-action">
+              <span class="archive-view-pill">Explore ↗</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 4: DESIGN PHILOSOPHY & PROJECT IMPACT
+         ======================================================== -->
+    <section class="philosophy-section" id="methodology">
+      <div class="content-wrapper">
+        <div class="section-header-row">
+          <div>
+            <div class="section-badge">
+              <span class="badge-dot orange"></span>
+              Execution Philosophy
+            </div>
+            <h2 class="section-title-large">
+              Engineered for Scalability, <span class="serif-italic">Proven</span> by Numbers
+            </h2>
+          </div>
+          <p class="section-sub-desc">
+            Design isn't merely aesthetic decoration — it's the operational spine of user retention, organic brand authority, and revenue velocity.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon-box">01</div>
+            <h3 class="pillar-title">Radical Clarity & First Principles</h3>
+            <p class="pillar-text">
+              Stripping away superfluous chrome and cognitive baggage. We isolate the core job-to-be-done so users accomplish complex goals with frictionless, self-evident interactions.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">02</div>
+            <h3 class="pillar-title">Engineered Design Systems</h3>
+            <p class="pillar-text">
+              Every curve, color token, and typography scale is codified into rigorous, version-controlled architecture. Bridges the void between Figma designs and battle-tested code.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">03</div>
+            <h3 class="pillar-title">Conversion & Behavioral Velocity</h3>
+            <p class="pillar-text">
+              Leveraging qualitative behavioral telemetry and data analytics to optimize funnels, elevate retention curves, and turn first-time visitors into committed brand advocates.
+            </p>
+          </div>
+        </div>
+
+        <!-- Endorsement Banner -->
+        <div class="endorsement-card">
+          <div class="quote-content">
+            <span class="quote-mark">“</span>
+            <p class="quote-text">
+              Ebrahim transformed our rough aerospace interface concept into a certified, award-winning cockpit operating system. His ability to balance severe technical constraints with breathtaking visual beauty is unmatched.
+            </p>
+            <div class="quote-author">
+              <div class="author-avatar">TM</div>
+              <div class="author-meta">
+                <h4>Tariq Mansoor</h4>
+                <p>Chief Product Officer at Tadveer Mobility</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="endorsement-metrics">
+            <div class="metric-badge-box">
+              <div class="badge-icon-circ">🏆</div>
+              <div class="badge-details">
+                <h5>Behance & Red Dot Featured</h5>
+                <p>Recognized for breakthrough interaction design</p>
+              </div>
+            </div>
+            <div class="metric-badge-box">
+              <div class="badge-icon-circ">⚡</div>
+              <div class="badge-details">
+                <h5>Rapid 2-Week Sprint Handoff</h5>
+                <p>Zero downtime delivery to development engineers</p>
+              </div>
+            </div>
+            <div class="metric-badge-box">
+              <div class="badge-icon-circ">🌐</div>
+              <div class="badge-details">
+                <h5>Global Production Readiness</h5>
+                <p>Deployments running across US, Europe, and Asia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer>
+    <div class="content-wrapper">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            Ebrahim
+            <span class="logo-dot"></span>
+          </a>
+          <p class="footer-desc">
+            Creative Direction, UI/UX Systems, and Industrial Product Architecture by Ebrahim Hossain. Helping venture-backed visionaries redefine their markets.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#home">Home Page</a></li>
+            <li><a href="projects.html">All Projects (Active)</a></li>
+            <li><a href="index.html#workflow">Workflow Sprints</a></li>
+            <li><a href="index.html#palette">Tech Stack</a></li>
+            <li><a href="index.html#stats">Market Telemetry</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Disciplines</h4>
+          <ul class="footer-links">
+            <li><a href="#case-studies">Fintech Platforms</a></li>
+            <li><a href="#case-studies">eVTOL Cockpits</a></li>
+            <li><a href="#case-studies">Physical Hardware</a></li>
+            <li><a href="#case-studies">Design Systems</a></li>
+            <li><a href="#case-studies">Brand Identity</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-cta-card">
+            <h5>Have a Project in Mind?</h5>
+            <p>Let's build something extraordinary together for your next venture.</p>
+            <a href="index.html#contact" class="btn-pill" style="align-self: flex-start; margin-top: 6px;">
+              Start a Conversation
+              <span class="btn-arrow-icon">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-line">
+        <div>
+          © 2026 Ebrahim Hossain (Folioblox). All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security</a>
+          <a href="#">Back to Top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Filter Script -->
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card-full');
+    const resultsCount = document.getElementById('resultsCount');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        let visibleCount = 0;
+
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        resultsCount.textContent = `Showing ${visibleCount} curated case studies`;
+      });
+    });
+  </script>
+</body>
+
+</html>
